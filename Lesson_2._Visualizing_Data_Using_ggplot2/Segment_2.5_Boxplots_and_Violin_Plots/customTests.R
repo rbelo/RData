@@ -18,7 +18,7 @@ aes_matches <- function(...) {
 	}
 
 	for (a in names(desired)) {
-		if (desired[[a]] != v$mapping[[a]]) {
+    if (desired[[a]] != rlang::get_expr(v$mapping[[a]])) {
 			return(FALSE)
 		}
 	}
